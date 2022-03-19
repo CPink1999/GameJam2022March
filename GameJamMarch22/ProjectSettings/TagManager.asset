@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Pillars
   - GivesDamage
+  - ProjectileSpawner
   layers:
   - Default
   - TransparentFX

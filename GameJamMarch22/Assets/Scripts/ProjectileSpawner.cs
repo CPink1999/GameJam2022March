@@ -33,14 +33,14 @@ public class ProjectileSpawner : MonoBehaviour
     [SerializeField] private Vector3 spawnOffset = new Vector3(0f, 20f, 0f);
 
     [Header("Origin Mode")]
-    [SerializeField] Transform origin;
+    [SerializeField] public Transform origin;
 
     private PillarManager pillars;
 
     private void Start()
     {
         pillars = GameObject.FindGameObjectWithTag("Pillars").GetComponent<PillarManager>();
-        StartCoroutine(SpawnRandomProjectiles());
+        //StartCoroutine(SpawnRandomProjectiles());
     }
 
     public void SpawnParryable (Vector3 target)
