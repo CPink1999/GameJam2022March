@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+
+/// <summary>Receives player input events and calls methods on the PlayerMovement class</summary>
 [RequireComponent(typeof(PlayerMovement))]
 public class PlayerInputHandler : MonoBehaviour
 {

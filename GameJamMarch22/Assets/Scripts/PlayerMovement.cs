@@ -2,12 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/// <summary>Contains method relating to moving the player within the specific spots that the player can travel to.</summary>
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("Timing")]
     [SerializeField] private float invisibilityTime = 0.2f;
     [SerializeField] private float startMoveDelay = 0.2f;
     [SerializeField] private float finishMoveDelay = 0.2f;
 
+    [Header("References")]
     [SerializeField] private GameObject playerRig;
 
     private PillarManager pillars;
