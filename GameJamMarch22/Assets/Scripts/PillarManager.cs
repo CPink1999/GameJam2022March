@@ -10,6 +10,14 @@ public class PillarManager : MonoBehaviour
             return jumpPoints.Length;
         }
     }
+    public Transform Center
+    {
+        get
+        {
+            return center;
+        }
+    }
+    [SerializeField] private Transform center;
     [SerializeField] private Transform[] jumpPoints = new Transform[0];
 
     public Transform GetPillar (int index)

@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private Transform testTransform;
-    [SerializeField] private float invisibilityTime = 1f;
-    [SerializeField] private float startMoveDelay = 1f;
-    [SerializeField] private float finishMoveDelay = 0.3f;
+    [SerializeField] private float invisibilityTime = 0.2f;
+    [SerializeField] private float startMoveDelay = 0.2f;
+    [SerializeField] private float finishMoveDelay = 0.2f;
 
     [SerializeField] private GameObject playerRig;
 
@@ -17,17 +16,18 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         pillars = GameObject.FindGameObjectWithTag("Pillars").GetComponent<PillarManager>();
+        RotateTowardsPillarCenter();
     }
 
     public void MoveLeft ()
     {
-        currentPillarIndex = (currentPillarIndex + pillars.Count - 1) % pillars.Count;
+        currentPillarIndex = (currentPillarIndex + 1) % pillars.Count;
         MoveToCurrentPillar();
     }
 
     public void MoveRight ()
     {
-        currentPillarIndex = (currentPillarIndex + 1) % pillars.Count;
+        currentPillarIndex = (currentPillarIndex + pillars.Count - 1) % pillars.Count;
         MoveToCurrentPillar();
     }
 
@@ -47,11 +47,19 @@ public class PlayerMovement : MonoBehaviour
         StartCoroutine(PerformMovement(location));
     }
 
+    private void RotateTowardsPillarCenter ()
+    {
+        Vector3 dirToCenter = pillars.Center.position - transform.position;
+        Quaternion rotation = Quaternion.LookRotation(dirToCenter, Vector3.up);
+        transform.rotation = rotation;
+    }
+
     private IEnumerator PerformMovement (Transform location)
     {
         yield return new WaitForSeconds(startMoveDelay);
         playerRig.SetActive(false);
         transform.position = location.position;
+        RotateTowardsPillarCenter();
         yield return new WaitForSeconds(invisibilityTime);
         playerRig.SetActive(true);
         yield return new WaitForSeconds(finishMoveDelay);
