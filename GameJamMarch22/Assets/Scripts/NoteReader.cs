@@ -81,9 +81,9 @@ public class NoteReader : MonoBehaviour
             if (int.Parse(projectileData[i].ToString()) != 0)
             {
                 if (int.Parse(projectileData[i].ToString()) == 1)
-                    pSpawner.SpawnParryable(pSpawner.origin.position, pillars.GetPillar(i).position);
+                    pSpawner.Spawn(pSpawner.origin.position, pillars.GetPillar(i).position, false);
                 else
-                    pSpawner.SpawnParryable(pSpawner.origin.position, pillars.GetPillar(i).position);
+                    pSpawner.Spawn(pSpawner.origin.position, pillars.GetPillar(i).position, true);
             }
         }
 

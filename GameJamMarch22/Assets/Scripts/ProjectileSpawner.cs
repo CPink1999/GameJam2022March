@@ -43,16 +43,17 @@ public class ProjectileSpawner : MonoBehaviour
         //StartCoroutine(SpawnRandomProjectiles());
     }
 
-    public void SpawnParryable (Vector3 target)
+    public void Spawn (Vector3 target, bool parryable)
     {
-        SpawnParryable(target + spawnOffset, target);
+        Spawn(target + spawnOffset, target, parryable);
     }
 
-    public void SpawnParryable(Vector3 origin, Vector3 target)
+    public void Spawn (Vector3 origin, Vector3 target, bool parryable)
     {
         Projectile newProjectile = Instantiate(parryableProjectilePrefab).GetComponent<Projectile>();
         newProjectile.transform.position = origin;
         newProjectile.speed = initialSpeed;
+        newProjectile.isParryable = parryable;
         newProjectile.target = target + targetOffset;
     }
 
@@ -67,11 +68,11 @@ public class ProjectileSpawner : MonoBehaviour
                 Transform randomPillar = pillars.GetPillar(randomIndex);
                 if (mode == modes.Offset)
                 {
-                    SpawnParryable(randomPillar.position);
+                    Spawn(randomPillar.position, false);
                 }
                 else if (mode == modes.Origin)
                 {
-                    SpawnParryable(origin.position, randomPillar.position);
+                    Spawn(origin.position, randomPillar.position, false);
                 }
             }
         }

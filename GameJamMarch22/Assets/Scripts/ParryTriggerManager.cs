@@ -10,7 +10,7 @@ public class ParryTriggerManager : MonoBehaviour
     {
         Projectile proj = other.transform.parent.GetComponent<Projectile>();
 
-        if (proj != null)
+        if (proj != null && proj.isParryable)
         {
             HandleSuccessfulParry(proj);
         }
