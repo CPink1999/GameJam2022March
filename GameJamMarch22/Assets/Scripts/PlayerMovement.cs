@@ -55,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void RotateTowardsPillarCenter ()
     {
-        Debug.Log(pillars);
+        //Debug.Log(pillars);
         Vector3 dirToCenter = pillars.Center.position - transform.position;
         Quaternion rotation = Quaternion.LookRotation(dirToCenter, Vector3.up);
         transform.rotation = rotation;

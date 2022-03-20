@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float sceneTransitionTime = 1f;
 
     public static GameManager instance;
+    public GameObject UIObject;
 
     private NoteReader noteReader;
     private PlayerInputHandler inputHandler;
@@ -49,7 +50,7 @@ public class GameManager : MonoBehaviour
         inputHandler = GameObject.FindGameObjectWithTag(playerTag).GetComponent<PlayerInputHandler>();
         sceneTransitioner = GameObject.FindGameObjectWithTag(sceneTransitionerTag).GetComponent<Animator>();
         instructions = GameObject.FindGameObjectWithTag(instructionsTag).GetComponent<Animator>();
-        gameUI = GameObject.FindGameObjectWithTag(gameUITag).GetComponent<Animator>();
+        gameUI = UIObject.GetComponent<Animator>();
 
         inputHandler.enabled = false;
 
