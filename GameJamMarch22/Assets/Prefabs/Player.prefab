@@ -73,6 +73,7 @@ GameObject:
   - component: {fileID: 6788961874776676318}
   - component: {fileID: 5659519615041074871}
   - component: {fileID: 2545367317771598906}
+  - component: {fileID: 6609618624443737034}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -237,6 +238,38 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: d363007c-4394-4257-93a4-47f795f46946
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2789924427626464860}
+        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
+        m_MethodName: HandleParry
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 63aa5ba6-ec04-46dc-8a7b-1502edfea079
+    m_ActionName: Player/Parry[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6609618624443737034}
+        m_TargetAssemblyTypeName: UIInputHandler, Assembly-CSharp
+        m_MethodName: HandleStart
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 0c4a3bf8-71b6-4d01-9857-88971f71b030
+    m_ActionName: UI/Start[/Keyboard/enter]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -286,6 +319,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parryLength: 0.2
   box: {fileID: 3484666786136868096}
+--- !u!114 &6609618624443737034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2789924427626464856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddf80a8766f0f98479a2554c2e63c73d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2789924428452966827
 GameObject:
   m_ObjectHideFlags: 0

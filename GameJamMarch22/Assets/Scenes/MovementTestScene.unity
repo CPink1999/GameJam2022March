@@ -204,17 +204,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 16513312}
   m_Mesh: {fileID: -7760074845545069097, guid: 3bb30863a52957c48b2cb839752de116, type: 3}
---- !u!114 &57787272 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2789924427626464860, guid: 8c50df4b165884d4094e36522ff915ec, type: 3}
-  m_PrefabInstance: {fileID: 2789924427199193571}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2b6eb726423d8f40bbcce7aa7cb823c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &190681975
 GameObject:
   m_ObjectHideFlags: 0
@@ -1907,6 +1896,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2137184313}
   - component: {fileID: 2137184314}
+  - component: {fileID: 2137184315}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1947,6 +1937,18 @@ MonoBehaviour:
   gameCam: {fileID: 1558554979}
   cameraTransitionTime: 2
   sceneTransitionTime: 1
+--- !u!114 &2137184315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137184312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddf80a8766f0f98479a2554c2e63c73d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2334040796870081342
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2032,44 +2034,12 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 2789924427626464862, guid: 8c50df4b165884d4094e36522ff915ec, type: 3}
-      propertyPath: m_ActionEvents.Array.size
-      value: 14
+      propertyPath: m_ActionEvents.Array.data[14].m_ActionId
+      value: e69e9c5a-0f5b-4ff6-b118-7887c1bf0df2
       objectReference: {fileID: 0}
     - target: {fileID: 2789924427626464862, guid: 8c50df4b165884d4094e36522ff915ec, type: 3}
-      propertyPath: m_ActionEvents.Array.data[13].m_ActionId
-      value: 63aa5ba6-ec04-46dc-8a7b-1502edfea079
-      objectReference: {fileID: 0}
-    - target: {fileID: 2789924427626464862, guid: 8c50df4b165884d4094e36522ff915ec, type: 3}
-      propertyPath: m_ActionEvents.Array.data[13].m_ActionName
-      value: Player/Parry[/Keyboard/space]
-      objectReference: {fileID: 0}
-    - target: {fileID: 2789924427626464862, guid: 8c50df4b165884d4094e36522ff915ec, type: 3}
-      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2789924427626464862, guid: 8c50df4b165884d4094e36522ff915ec, type: 3}
-      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2789924427626464862, guid: 8c50df4b165884d4094e36522ff915ec, type: 3}
-      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 57787272}
-    - target: {fileID: 2789924427626464862, guid: 8c50df4b165884d4094e36522ff915ec, type: 3}
-      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2789924427626464862, guid: 8c50df4b165884d4094e36522ff915ec, type: 3}
-      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: HandleParry
-      objectReference: {fileID: 0}
-    - target: {fileID: 2789924427626464862, guid: 8c50df4b165884d4094e36522ff915ec, type: 3}
-      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: PlayerInputHandler, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 2789924427626464862, guid: 8c50df4b165884d4094e36522ff915ec, type: 3}
-      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+      propertyPath: m_ActionEvents.Array.data[14].m_ActionName
+      value: Player/Start[/Keyboard/enter]
       objectReference: {fileID: 0}
     - target: {fileID: 2789924427626464863, guid: 8c50df4b165884d4094e36522ff915ec, type: 3}
       propertyPath: m_RootOrder

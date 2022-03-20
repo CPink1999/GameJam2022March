@@ -45,8 +45,6 @@ public class GameManager : MonoBehaviour
         inputHandler.enabled = false;
 
         startingCam.Priority = 100;
-
-        StartGame();
     }
 
     private void OnEnable()
@@ -84,7 +82,6 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator StartGameCoroutine()
     {
-        yield return new WaitForSeconds(2f);
         gameCam.Priority = 100;
         startingCam.Priority = 0;
         yield return new WaitForSeconds(cameraTransitionTime);
