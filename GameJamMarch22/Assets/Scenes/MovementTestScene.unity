@@ -175,6 +175,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5542441739278324849, guid: 4cc15d03f6bdc6246b1735a70d69d62a, type: 3}
+      propertyPath: noteChart
+      value: 
+      objectReference: {fileID: 4900000, guid: 20589dd76a3a32648a53b250d457525b, type: 3}
+    - target: {fileID: 5542441739278324849, guid: 4cc15d03f6bdc6246b1735a70d69d62a, type: 3}
       propertyPath: songToPlay
       value: 
       objectReference: {fileID: 8300000, guid: 26e60d7b427348c45b9730775ebe5170, type: 3}
@@ -266,7 +270,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1587354801}
-  m_LocalRotation: {x: 0.2425356, y: 0.000000028912504, z: -0.000000007228125, w: 0.97014254}
+  m_LocalRotation: {x: 0.24253562, y: 1.6858226e-15, z: -3.8335885e-16, w: 0.97014254}
   m_LocalPosition: {x: 0, y: 11, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -542,15 +546,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2334040798731191679, guid: 7db92c335053f124eaa200553e0f59b3, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.2425356
+      value: 0.24253562
       objectReference: {fileID: 0}
     - target: {fileID: 2334040798731191679, guid: 7db92c335053f124eaa200553e0f59b3, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000028912504
+      value: 1.6858226e-15
       objectReference: {fileID: 0}
     - target: {fileID: 2334040798731191679, guid: 7db92c335053f124eaa200553e0f59b3, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.000000007228125
+      value: -3.8335885e-16
       objectReference: {fileID: 0}
     - target: {fileID: 2334040798731191679, guid: 7db92c335053f124eaa200553e0f59b3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

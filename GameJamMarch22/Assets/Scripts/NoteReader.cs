@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEditor;
 
 public class NoteReader : MonoBehaviour
 {
-    public string stringpath;
+    public TextAsset noteChart;
 
     public AudioClip songToPlay;
     AudioSource aSource;
@@ -30,7 +31,7 @@ public class NoteReader : MonoBehaviour
         aSource.clip = songToPlay;
 
         bar = new int[6];
-        reader = new StreamReader(Application.persistentDataPath + stringpath);
+        reader = new StreamReader(AssetDatabase.GetAssetPath(noteChart));
         BeginRead();
         
     }
