@@ -47,7 +47,7 @@ MonoBehaviour:
   parryableProjectilePrefab: {fileID: 3363708107521352884, guid: 6fb8a1112dd7411479bcc9acb61e0925, type: 3}
   nonParryableProjectilePrefab: {fileID: 0}
   targetOffset: {x: 0, y: 1, z: 0}
-  initialSpeed: 5
+  initialSpeed: 10
   randomSpawnDelay: 0.5
   mode: 0
   spawnOffset: {x: 0, y: 20, z: 0}

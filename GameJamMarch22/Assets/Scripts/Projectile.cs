@@ -7,7 +7,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public bool isParryable;
-    public float speed = 10f;
+    public float speed;
     public Vector3 target;
     public bool destroyOnDestination = true;
 
