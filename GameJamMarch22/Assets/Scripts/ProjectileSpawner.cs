@@ -45,10 +45,21 @@ public class ProjectileSpawner : MonoBehaviour
 
     public void Spawn (Vector3 target, bool parryable)
     {
-        Spawn(target + spawnOffset, target, parryable);
+        if (mode == modes.Offset)
+        {
+            SpawnWithOffset(target, parryable);
+        } else
+        {
+            SpawnAtPoint(origin.position, target, parryable);
+        }
     }
 
-    public void Spawn (Vector3 origin, Vector3 target, bool parryable)
+    private void SpawnWithOffset(Vector3 target, bool parryable)
+    {
+        SpawnAtPoint(target + spawnOffset, target, parryable);
+    }
+
+    private void SpawnAtPoint (Vector3 origin, Vector3 target, bool parryable)
     {
         Projectile newProjectile;
         if (parryable)
@@ -75,14 +86,7 @@ public class ProjectileSpawner : MonoBehaviour
             {
                 int randomIndex = Random.Range(0, pillars.Count);
                 Transform randomPillar = pillars.GetPillar(randomIndex);
-                if (mode == modes.Offset)
-                {
-                    Spawn(randomPillar.position, false);
-                }
-                else if (mode == modes.Origin)
-                {
-                    Spawn(origin.position, randomPillar.position, false);
-                }
+                Spawn(randomPillar.position, false);
             }
         }
     }
