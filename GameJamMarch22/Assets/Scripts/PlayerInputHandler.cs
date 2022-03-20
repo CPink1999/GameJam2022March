@@ -6,19 +6,22 @@ using UnityEngine.InputSystem;
 
 /// <summary>Receives player input events and calls methods on the PlayerMovement class</summary>
 [RequireComponent(typeof(PlayerMovement))]
+[RequireComponent(typeof(ParryManager))]
 public class PlayerInputHandler : MonoBehaviour
 {
-    private PlayerMovement pm;
+    private PlayerMovement playerManager;
+    private ParryManager parryManager;
     private void Start()
     {
-        pm = GetComponent<PlayerMovement>();   
+        playerManager = GetComponent<PlayerMovement>();
+        parryManager = GetComponent<ParryManager>();
     }
 
     public void HandleLeft (InputAction.CallbackContext value)
     {
         if (value.performed)
         {
-            pm.MoveLeft();
+            playerManager.MoveLeft();
         }
     }
 
@@ -26,7 +29,7 @@ public class PlayerInputHandler : MonoBehaviour
     {
         if (value.performed)
         {
-            pm.MoveRight();
+            playerManager.MoveRight();
         }
     }
 
@@ -34,7 +37,15 @@ public class PlayerInputHandler : MonoBehaviour
     {
         if (value.performed)
         {
-            pm.MoveAcross();
+            playerManager.MoveAcross();
+        }
+    }
+
+    public void HandleParry (InputAction.CallbackContext value)
+    {
+        if (value.performed)
+        {
+            parryManager.Parry();
         }
     }
 }
