@@ -76,10 +76,8 @@ public class NoteReader : MonoBehaviour
     IEnumerator SpawnProjectiles(char[] projectileData)
     {
         //SpawnNotes
-        Debug.Log("Attempting to spawn notes");
         for (int i = 0; i < 6; i++)
         {
-            Debug.Log(projectileData[i]);
             if(int.Parse(projectileData[i].ToString()) == 1)
             pSpawner.SpawnParryable(pSpawner.origin.position, pillars.GetPillar(i).position);
         }
