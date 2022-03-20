@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private string noteReaderTag = "NoteReader";
     [SerializeField] private string playerTag = "Player";
     [SerializeField] private string sceneTransitionerTag = "SceneTransitioner";
+    [SerializeField] private string instructionsTag = "Instructions";
 
     [Header("Cameras")]
     [SerializeField] private CinemachineVirtualCamera startingCam;
@@ -26,6 +27,7 @@ public class GameManager : MonoBehaviour
     private NoteReader noteReader;
     private PlayerInputHandler inputHandler;
     private Animator sceneTransitioner;
+    private Animator instructions;
 
     private void Start()
     {
@@ -41,6 +43,7 @@ public class GameManager : MonoBehaviour
         noteReader = GameObject.FindGameObjectWithTag(noteReaderTag).GetComponent<NoteReader>();
         inputHandler = GameObject.FindGameObjectWithTag(playerTag).GetComponent<PlayerInputHandler>();
         sceneTransitioner = GameObject.FindGameObjectWithTag(sceneTransitionerTag).GetComponent<Animator>();
+        instructions = GameObject.FindGameObjectWithTag(instructionsTag).GetComponent<Animator>();
 
         inputHandler.enabled = false;
 
@@ -82,6 +85,7 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator StartGameCoroutine()
     {
+        instructions.SetTrigger("FadeOut");
         gameCam.Priority = 100;
         startingCam.Priority = 0;
         yield return new WaitForSeconds(cameraTransitionTime);

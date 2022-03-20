@@ -9,6 +9,7 @@ TagManager:
   - ProjectileSpawner
   - NoteReader
   - SceneTransitioner
+  - Instructions
   layers:
   - Default
   - TransparentFX
