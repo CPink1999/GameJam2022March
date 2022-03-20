@@ -505,7 +505,7 @@ PrefabInstance:
     - target: {fileID: 5542441739278324849, guid: 4cc15d03f6bdc6246b1735a70d69d62a, type: 3}
       propertyPath: songToPlay
       value: 
-      objectReference: {fileID: 8300000, guid: 26e60d7b427348c45b9730775ebe5170, type: 3}
+      objectReference: {fileID: 8300000, guid: c813ebf979dbcb84ebc8d4898c7e9ec2, type: 3}
     - target: {fileID: 5542441739278324850, guid: 4cc15d03f6bdc6246b1735a70d69d62a, type: 3}
       propertyPath: m_Name
       value: NoteReader
@@ -2444,11 +2444,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2334040798731191679, guid: 7db92c335053f124eaa200553e0f59b3, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0000000097749595
+      value: -0.0000000097748645
       objectReference: {fileID: 0}
     - target: {fileID: 2334040798731191679, guid: 7db92c335053f124eaa200553e0f59b3, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000022244953
+      value: 0.0000000022244735
       objectReference: {fileID: 0}
     - target: {fileID: 2334040798731191679, guid: 7db92c335053f124eaa200553e0f59b3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

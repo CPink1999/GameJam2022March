@@ -13,7 +13,7 @@ public class NoteReader : MonoBehaviour
 
     float BPM;
     float NPS;
-    float startDelay;
+    float startDelay = 0;
     string barData;
     int[] bar;
 
@@ -29,17 +29,17 @@ public class NoteReader : MonoBehaviour
         aSource.clip = songToPlay;
 
         bar = new int[6];
-        reader = new StreamReader("Assets//MusicFiles//MoonLightSonata//MoonlightNoteChart.txt");
+       reader = new StreamReader(Application.streamingAssetsPath + "//MusicFiles//MoonLightSonata//MoonlightNoteChart.txt");
     }
 
     //Grabs the speed of the song and starts the iteration
     public void BeginRead()
     {
-        Debug.Log(reader.ReadLine());
+        //Debug.Log(reader.ReadLine());
         BPM = float.Parse(reader.ReadLine());
         NPS = (1 / (BPM / 60));
         startDelay = (float.Parse(reader.ReadLine()) / 1000);
-        Debug.Log(BPM.ToString());
+       // Debug.Log(BPM.ToString());
 
         aSource.Play();
         StartCoroutine(StartDelay());
@@ -64,7 +64,6 @@ public class NoteReader : MonoBehaviour
     {
         if (reader.Peek() > -1)
         {
-            //Debug.Log(reader.ReadLine());
 
             StartCoroutine(BarDelay());
             barData = reader.ReadLine();
