@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3363708107521352886}
   - component: {fileID: 3363708107521352887}
   m_Layer: 0
-  m_Name: Projectile
+  m_Name: Projectile_Parry
   m_TagString: GivesDamage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -125,7 +125,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6e64ffc1f20e9cd4d871847b47528ccd, type: 2}
+  - {fileID: 2100000, guid: 86f4f3ae1b535c64ab9d90cb0d8adab4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -2600,6 +2600,14 @@ PrefabInstance:
       propertyPath: mode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5912076401006169777, guid: f63f287c8ec8a8a42bee200f1c7acbf8, type: 3}
+      propertyPath: parryableProjectilePrefab
+      value: 
+      objectReference: {fileID: 3363708107521352884, guid: c46e23cad47ecc841a3bbc1d9d142607, type: 3}
+    - target: {fileID: 5912076401006169777, guid: f63f287c8ec8a8a42bee200f1c7acbf8, type: 3}
+      propertyPath: nonParryableProjectilePrefab
+      value: 
+      objectReference: {fileID: 3363708107521352884, guid: 6fb8a1112dd7411479bcc9acb61e0925, type: 3}
     - target: {fileID: 5912076401006169791, guid: f63f287c8ec8a8a42bee200f1c7acbf8, type: 3}
       propertyPath: m_Name
       value: ProjectileSpawner

@@ -50,7 +50,16 @@ public class ProjectileSpawner : MonoBehaviour
 
     public void Spawn (Vector3 origin, Vector3 target, bool parryable)
     {
-        Projectile newProjectile = Instantiate(parryableProjectilePrefab).GetComponent<Projectile>();
+        Projectile newProjectile;
+        if (parryable)
+        {
+            newProjectile = Instantiate(parryableProjectilePrefab).GetComponent<Projectile>();
+        }
+        else
+        {
+            newProjectile = Instantiate(nonParryableProjectilePrefab).GetComponent<Projectile>();
+        }
+
         newProjectile.transform.position = origin;
         newProjectile.speed = initialSpeed;
         newProjectile.isParryable = parryable;

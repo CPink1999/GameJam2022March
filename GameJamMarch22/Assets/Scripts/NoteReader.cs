@@ -6,8 +6,6 @@ using UnityEditor;
 
 public class NoteReader : MonoBehaviour
 {
-    public TextAsset noteChart;
-
     public AudioClip songToPlay;
     AudioSource aSource;
 
@@ -31,7 +29,7 @@ public class NoteReader : MonoBehaviour
         aSource.clip = songToPlay;
 
         bar = new int[6];
-        reader = new StreamReader(AssetDatabase.GetAssetPath(noteChart));
+        reader = new StreamReader("Assets//MusicFiles//MoonLightSonata//MoonlightNoteChart.txt");
     }
 
     //Grabs the speed of the song and starts the iteration
