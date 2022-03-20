@@ -78,8 +78,13 @@ public class NoteReader : MonoBehaviour
         //SpawnNotes
         for (int i = 0; i < 6; i++)
         {
-            if(int.Parse(projectileData[i].ToString()) == 1)
-            pSpawner.SpawnParryable(pSpawner.origin.position, pillars.GetPillar(i).position);
+            if (int.Parse(projectileData[i].ToString()) != 0)
+            {
+                if (int.Parse(projectileData[i].ToString()) == 1)
+                    pSpawner.SpawnParryable(pSpawner.origin.position, pillars.GetPillar(i).position);
+                else
+                    pSpawner.SpawnParryable(pSpawner.origin.position, pillars.GetPillar(i).position);
+            }
         }
 
         yield return new WaitForSeconds(0);
