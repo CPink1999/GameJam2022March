@@ -35,11 +35,12 @@ public class ProjectileSpawner : MonoBehaviour
     [Header("Origin Mode")]
     [SerializeField] public Transform origin;
 
+    public GameObject PillarsObject;
     private PillarManager pillars;
 
     private void Start()
     {
-        pillars = GameObject.FindGameObjectWithTag("Pillars").GetComponent<PillarManager>();
+        pillars = PillarsObject.GetComponent<PillarManager>();
         //StartCoroutine(SpawnRandomProjectiles());
     }
 

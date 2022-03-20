@@ -285,6 +285,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 190681975}
   m_Mesh: {fileID: -7760074845545069097, guid: 3bb30863a52957c48b2cb839752de116, type: 3}
+--- !u!1 &447514677 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5912076401006169791, guid: f63f287c8ec8a8a42bee200f1c7acbf8, type: 3}
+  m_PrefabInstance: {fileID: 5912076401062760040}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &471071353
 GameObject:
   m_ObjectHideFlags: 0
@@ -506,12 +511,25 @@ PrefabInstance:
       propertyPath: songToPlay
       value: 
       objectReference: {fileID: 8300000, guid: c813ebf979dbcb84ebc8d4898c7e9ec2, type: 3}
+    - target: {fileID: 5542441739278324849, guid: 4cc15d03f6bdc6246b1735a70d69d62a, type: 3}
+      propertyPath: PillarsObject
+      value: 
+      objectReference: {fileID: 806612262}
+    - target: {fileID: 5542441739278324849, guid: 4cc15d03f6bdc6246b1735a70d69d62a, type: 3}
+      propertyPath: spawnerObject
+      value: 
+      objectReference: {fileID: 447514677}
     - target: {fileID: 5542441739278324850, guid: 4cc15d03f6bdc6246b1735a70d69d62a, type: 3}
       propertyPath: m_Name
       value: NoteReader
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4cc15d03f6bdc6246b1735a70d69d62a, type: 3}
+--- !u!1 &806612262 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3033975835404020930, guid: e934c1a5e4b375f459415ef3e7f7e1c6, type: 3}
+  m_PrefabInstance: {fileID: 3033975835576482804}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &846161738
 GameObject:
   m_ObjectHideFlags: 3
@@ -2487,9 +2505,9 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 2789924427626464861, guid: 8c50df4b165884d4094e36522ff915ec, type: 3}
-      propertyPath: pillars
+      propertyPath: PillarsObject
       value: 
-      objectReference: {fileID: 2029395157}
+      objectReference: {fileID: 806612262}
     - target: {fileID: 2789924427626464862, guid: 8c50df4b165884d4094e36522ff915ec, type: 3}
       propertyPath: m_ActionEvents.Array.data[14].m_ActionId
       value: e69e9c5a-0f5b-4ff6-b118-7887c1bf0df2
@@ -2878,6 +2896,10 @@ PrefabInstance:
       propertyPath: mode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5912076401006169777, guid: f63f287c8ec8a8a42bee200f1c7acbf8, type: 3}
+      propertyPath: PillarsObject
+      value: 
+      objectReference: {fileID: 806612262}
     - target: {fileID: 5912076401006169777, guid: f63f287c8ec8a8a42bee200f1c7acbf8, type: 3}
       propertyPath: parryableProjectilePrefab
       value: 

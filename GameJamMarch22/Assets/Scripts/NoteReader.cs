@@ -17,14 +17,16 @@ public class NoteReader : MonoBehaviour
     string barData;
     int[] bar;
 
+    public GameObject PillarsObject;
+    public GameObject spawnerObject;
     private PillarManager pillars;
     private ProjectileSpawner pSpawner;
 
     // Start is called before the first frame update
     void Start()
     {
-        pillars = GameObject.FindGameObjectWithTag("Pillars").GetComponent<PillarManager>();
-        pSpawner = GameObject.FindGameObjectWithTag("ProjectileSpawner").GetComponent<ProjectileSpawner>();
+        pillars = PillarsObject.GetComponent<PillarManager>();
+        pSpawner = spawnerObject.GetComponent<ProjectileSpawner>();
         aSource = GetComponent<AudioSource>();
         aSource.clip = songToPlay;
 

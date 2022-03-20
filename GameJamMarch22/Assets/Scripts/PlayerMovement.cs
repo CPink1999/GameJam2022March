@@ -14,17 +14,14 @@ public class PlayerMovement : MonoBehaviour
     [Header("References")]
     [SerializeField] private GameObject playerRig;
 
-    [SerializeField] private PillarManager pillars;
+    public GameObject PillarsObject;
+    private PillarManager pillars;
     private int currentPillarIndex;
-
-    private void Awake()
-    {
-        pillars = GameObject.FindGameObjectWithTag("Pillars").GetComponent<PillarManager>();
-    }
 
     private void Start()
     {
         //pillars = GameObject.FindGameObjectWithTag("Pillars").GetComponent<PillarManager>();
+        pillars = PillarsObject.GetComponent<PillarManager>();
         RotateTowardsPillarCenter();
     }
 
