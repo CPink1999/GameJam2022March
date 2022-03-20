@@ -47,6 +47,21 @@ public class NoteReader : MonoBehaviour
         StartCoroutine(StartDelay());
     }
 
+    public void FadeOut (float time)
+    {
+        StartCoroutine(FadeOutCoroutine(time));
+    }
+
+    private IEnumerator FadeOutCoroutine (float time)
+    {
+        float startVolume = aSource.volume;
+        while (aSource.volume > 0)
+        {
+            aSource.volume -= startVolume * (Time.deltaTime / time);
+            yield return null;
+        }
+    }
+
     void ReadBars()
     {
         if (reader.Peek() > -1)
