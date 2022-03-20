@@ -35,11 +35,11 @@ public class NoteReader : MonoBehaviour
     //Grabs the speed of the song and starts the iteration
     public void BeginRead()
     {
-        //Debug.Log(reader.ReadLine());
+        reader.ReadLine();
         BPM = float.Parse(reader.ReadLine());
         NPS = (1 / (BPM / 60));
         startDelay = (float.Parse(reader.ReadLine()) / 1000);
-       // Debug.Log(BPM.ToString());
+        Debug.Log(BPM.ToString());
 
         aSource.Play();
         StartCoroutine(StartDelay());

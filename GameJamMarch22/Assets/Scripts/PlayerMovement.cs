@@ -17,6 +17,11 @@ public class PlayerMovement : MonoBehaviour
     private PillarManager pillars;
     private int currentPillarIndex;
 
+    private void Awake()
+    {
+        pillars = GameObject.FindGameObjectWithTag("Pillars").GetComponent<PillarManager>();
+    }
+
     private void Start()
     {
         pillars = GameObject.FindGameObjectWithTag("Pillars").GetComponent<PillarManager>();

@@ -105,7 +105,7 @@ public class GameManager : MonoBehaviour
         gameCam.Priority = 100;
         startingCam.Priority = 0;
         yield return new WaitForSeconds(cameraTransitionTime);
-        gameUI.SetTrigger("FadeIn");
+        //gameUI.SetTrigger("FadeIn");
         noteReader.BeginRead();
         inputHandler.enabled = true;
 
