@@ -60,12 +60,19 @@ public class GameManager : MonoBehaviour
     {
         TakeDamage.OnDeath += GameOver;
         DifficultySlider.OnUpdateDifficulty += UpdateDifficulty;
+        ParryTriggerManager.OnParrySequence += ReceiveSuccessfulParry;
     }
 
     private void OnDisable()
     {
         TakeDamage.OnDeath -= GameOver;
         DifficultySlider.OnUpdateDifficulty -= UpdateDifficulty;
+        ParryTriggerManager.OnParrySequence -= ReceiveSuccessfulParry;
+    }
+
+    private void ReceiveSuccessfulParry ()
+    {
+        playerTakeDamage.GiveHealth(1);
     }
 
     private void UpdateDifficulty (int amount)

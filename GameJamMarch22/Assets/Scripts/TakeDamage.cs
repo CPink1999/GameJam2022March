@@ -14,7 +14,8 @@ public class TakeDamage : MonoBehaviour
     public static event DeathAction OnDeath;
 
     [SerializeField] private string damageTag = "GivesDamage";
-    [SerializeField] private int defaultMaxHealth = 3;
+    [SerializeField] private int defaultInitialHealth = 3;
+    [SerializeField] private int maxHealth = 9;
 
     public int Health { get; private set; }
 
@@ -23,16 +24,22 @@ public class TakeDamage : MonoBehaviour
         Health = amount;
     }
 
+    public void GiveHealth (int amount)
+    {
+        Debug.Log(amount + " " + Health);
+        Health = (int) Mathf.Clamp(Health + amount, 0, maxHealth);
+        if (Health <= 0)
+        {
+            HandleDeath();
+        }
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag(damageTag))
         {
             OnTakeDamage?.Invoke();
-            Health = (int) Mathf.Clamp(Health - 1, 0, Mathf.Infinity);
-            if (Health <= 0)
-            {
-                HandleDeath();
-            }
+            GiveHealth(-1);
         }
     }
 

@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("References")]
     [SerializeField] private GameObject playerRig;
 
-    private PillarManager pillars;
+    [SerializeField] private PillarManager pillars;
     private int currentPillarIndex;
 
     private void Awake()
@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
-        pillars = GameObject.FindGameObjectWithTag("Pillars").GetComponent<PillarManager>();
+        //pillars = GameObject.FindGameObjectWithTag("Pillars").GetComponent<PillarManager>();
         RotateTowardsPillarCenter();
     }
 
@@ -58,6 +58,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void RotateTowardsPillarCenter ()
     {
+        Debug.Log(pillars);
         Vector3 dirToCenter = pillars.Center.position - transform.position;
         Quaternion rotation = Quaternion.LookRotation(dirToCenter, Vector3.up);
         transform.rotation = rotation;

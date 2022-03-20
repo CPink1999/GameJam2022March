@@ -58,6 +58,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedMultiplier: 3
+  successiveParryThreshold: 3
+  successiveParryTime: 0.5
 --- !u!1 &2789924427626464856
 GameObject:
   m_ObjectHideFlags: 0
@@ -303,8 +305,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3380a34aa606d0a47be4eb07e9d9714e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1
   damageTag: GivesDamage
+  defaultInitialHealth: 3
+  maxHealth: 9
 --- !u!114 &2545367317771598906
 MonoBehaviour:
   m_ObjectHideFlags: 0
