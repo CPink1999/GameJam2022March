@@ -11,6 +11,7 @@ public class PlayerInputHandler : MonoBehaviour
 {
     private PlayerMovement playerManager;
     private ParryManager parryManager;
+
     private void Start()
     {
         playerManager = GetComponent<PlayerMovement>();
@@ -19,33 +20,45 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void HandleLeft (InputAction.CallbackContext value)
     {
-        if (value.performed)
+        if (enabled)
         {
-            playerManager.MoveLeft();
+            if (value.performed)
+            {
+                playerManager.MoveLeft();
+            }
         }
     }
 
     public void HandleRight (InputAction.CallbackContext value)
     {
-        if (value.performed)
+        if (enabled)
         {
-            playerManager.MoveRight();
+            if (value.performed)
+            {
+                playerManager.MoveRight();
+            }
         }
     }
 
     public void HandleAcross (InputAction.CallbackContext value)
     {
-        if (value.performed)
+        if (enabled)
         {
-            playerManager.MoveAcross();
+            if (value.performed)
+            {
+                playerManager.MoveAcross();
+            }
         }
     }
 
     public void HandleParry (InputAction.CallbackContext value)
     {
-        if (value.performed)
+        if (enabled)
         {
-            parryManager.Parry();
+            if (value.performed)
+            {
+                parryManager.Parry();
+            }
         }
     }
 }

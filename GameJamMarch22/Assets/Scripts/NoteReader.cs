@@ -31,13 +31,11 @@ public class NoteReader : MonoBehaviour
         aSource.clip = songToPlay;
 
         bar = new int[6];
-        reader = new StreamReader(AssetDatabase.GetAssetPath(noteChart));
-        BeginRead();
-        
+        reader = new StreamReader(AssetDatabase.GetAssetPath(noteChart)); 
     }
 
     //Grabs the speed of the song and starts the iteration
-    void BeginRead()
+    public void BeginRead()
     {
         Debug.Log(reader.ReadLine());
         BPM = float.Parse(reader.ReadLine());

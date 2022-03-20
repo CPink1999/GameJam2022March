@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5542441739278324849}
   m_Layer: 0
   m_Name: NoteReader
-  m_TagString: Untagged
+  m_TagString: NoteReader
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43,4 +43,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4b780101328b874394e8e3cd63b52a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stringpath: /test.txt
+  noteChart: {fileID: 0}
+  songToPlay: {fileID: 0}
