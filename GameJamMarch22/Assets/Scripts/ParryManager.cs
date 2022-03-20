@@ -20,9 +20,7 @@ public class ParryManager : MonoBehaviour
     private IEnumerator DoParry()
     {
         box.enabled = true;
-        Debug.Log("ENABLED");
         yield return new WaitForSeconds(parryLength);
-        Debug.Log("DISABLED");
         box.enabled = false;
     }
 }
