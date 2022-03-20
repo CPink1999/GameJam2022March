@@ -13,17 +13,22 @@ public class TakeDamage : MonoBehaviour
     public delegate void DeathAction();
     public static event DeathAction OnDeath;
 
-    [SerializeField] private int maxHealth = 5;
     [SerializeField] private string damageTag = "GivesDamage";
+    [SerializeField] private int defaultMaxHealth = 3;
 
     public int Health { get; private set; }
+
+    public void UpdateHealth (int amount)
+    {
+        Health = amount;
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag(damageTag))
         {
             OnTakeDamage?.Invoke();
-            Health -= 1;
+            Health = (int) Mathf.Clamp(Health - 1, 0, Mathf.Infinity);
             if (Health <= 0)
             {
                 HandleDeath();

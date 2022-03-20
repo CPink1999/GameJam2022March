@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private string playerTag = "Player";
     [SerializeField] private string sceneTransitionerTag = "SceneTransitioner";
     [SerializeField] private string instructionsTag = "Instructions";
+    [SerializeField] private string gameUITag = "GameUI";
 
     [Header("Cameras")]
     [SerializeField] private CinemachineVirtualCamera startingCam;
@@ -28,6 +29,8 @@ public class GameManager : MonoBehaviour
     private PlayerInputHandler inputHandler;
     private Animator sceneTransitioner;
     private Animator instructions;
+    private Animator gameUI;
+    private TakeDamage playerTakeDamage;
 
     private void Start()
     {
@@ -40,10 +43,13 @@ public class GameManager : MonoBehaviour
             instance = this;
         }
 
+        playerTakeDamage = GameObject.FindGameObjectWithTag(playerTag).GetComponent<TakeDamage>();
+        UpdateDifficulty(PlayerPrefs.GetInt("Difficulty")); // We have to set it here as well because this method fires at the same time the updateHealth event does.
         noteReader = GameObject.FindGameObjectWithTag(noteReaderTag).GetComponent<NoteReader>();
         inputHandler = GameObject.FindGameObjectWithTag(playerTag).GetComponent<PlayerInputHandler>();
         sceneTransitioner = GameObject.FindGameObjectWithTag(sceneTransitionerTag).GetComponent<Animator>();
         instructions = GameObject.FindGameObjectWithTag(instructionsTag).GetComponent<Animator>();
+        gameUI = GameObject.FindGameObjectWithTag(gameUITag).GetComponent<Animator>();
 
         inputHandler.enabled = false;
 
@@ -53,11 +59,21 @@ public class GameManager : MonoBehaviour
     private void OnEnable()
     {
         TakeDamage.OnDeath += GameOver;
+        DifficultySlider.OnUpdateDifficulty += UpdateDifficulty;
     }
 
     private void OnDisable()
     {
         TakeDamage.OnDeath -= GameOver;
+        DifficultySlider.OnUpdateDifficulty -= UpdateDifficulty;
+    }
+
+    private void UpdateDifficulty (int amount)
+    {
+        if (playerTakeDamage != null)
+        {
+            playerTakeDamage.UpdateHealth(amount);
+        }
     }
 
     public void GameOver()
@@ -89,6 +105,7 @@ public class GameManager : MonoBehaviour
         gameCam.Priority = 100;
         startingCam.Priority = 0;
         yield return new WaitForSeconds(cameraTransitionTime);
+        gameUI.SetTrigger("FadeIn");
         noteReader.BeginRead();
         inputHandler.enabled = true;
 
