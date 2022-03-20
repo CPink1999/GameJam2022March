@@ -12,7 +12,7 @@ public class NoteReader : MonoBehaviour
     AudioSource aSource;
 
     StreamReader reader;
-    
+
     float BPM;
     float NPS;
     float startDelay;
@@ -31,7 +31,7 @@ public class NoteReader : MonoBehaviour
         aSource.clip = songToPlay;
 
         bar = new int[6];
-        reader = new StreamReader(AssetDatabase.GetAssetPath(noteChart)); 
+        reader = new StreamReader(AssetDatabase.GetAssetPath(noteChart));
     }
 
     //Grabs the speed of the song and starts the iteration
@@ -47,12 +47,27 @@ public class NoteReader : MonoBehaviour
         StartCoroutine(StartDelay());
     }
 
+    public void FadeOut(float time)
+    {
+        StartCoroutine(FadeOutCoroutine(time));
+    }
+
+    private IEnumerator FadeOutCoroutine(float time)
+    {
+        float startVolume = aSource.volume;
+        while (aSource.volume > 0)
+        {
+            aSource.volume -= startVolume * (Time.deltaTime / time);
+            yield return null;
+        }
+    }
+
     void ReadBars()
     {
         if (reader.Peek() > -1)
         {
             //Debug.Log(reader.ReadLine());
-            
+
             StartCoroutine(BarDelay());
             barData = reader.ReadLine();
             StartCoroutine(SpawnProjectiles(barData.ToCharArray()));

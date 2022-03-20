@@ -1942,9 +1942,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   noteReaderTag: NoteReader
   playerTag: Player
+  sceneTransitionerTag: SceneTransitioner
   startingCam: {fileID: 1746068529}
   gameCam: {fileID: 1558554979}
   cameraTransitionTime: 2
+  sceneTransitionTime: 1
 --- !u!1001 &2334040796870081342
 PrefabInstance:
   m_ObjectHideFlags: 0
