@@ -6,7 +6,12 @@ using UnityEngine;
 public class NoteReader : MonoBehaviour
 {
     public string stringpath;
-    public StreamReader reader;
+
+    public AudioClip songToPlay;
+    AudioSource aSource;
+
+    StreamReader reader;
+    
     float BPM;
     float NPS;
     float startDelay;
@@ -21,6 +26,8 @@ public class NoteReader : MonoBehaviour
     {
         pillars = GameObject.FindGameObjectWithTag("Pillars").GetComponent<PillarManager>();
         pSpawner = GameObject.FindGameObjectWithTag("ProjectileSpawner").GetComponent<ProjectileSpawner>();
+        aSource = GetComponent<AudioSource>();
+        aSource.clip = songToPlay;
 
         bar = new int[6];
         reader = new StreamReader(Application.persistentDataPath + stringpath);
@@ -37,6 +44,7 @@ public class NoteReader : MonoBehaviour
         startDelay = (float.Parse(reader.ReadLine()) / 1000);
         Debug.Log(BPM.ToString());
 
+        aSource.Play();
         StartCoroutine(StartDelay());
     }
 
